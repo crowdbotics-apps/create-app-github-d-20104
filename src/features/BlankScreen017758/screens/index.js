@@ -1,3 +1,4 @@
+import { connect } from "react-redux"
 import React from "react"
 import {
   View,
@@ -17,25 +18,23 @@ import Slider from "@react-native-community/slider"
 import { CheckBox } from "react-native-elements"
 import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
 
-export default class Blank extends React.Component {
+class Blank extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
   static navigationOptions = ({ navigation }) => {
-    return {
-      headerLeft: <SlideMenuIcon navigationProps={navigation} />
-    }
+    return { headerLeft: <SlideMenuIcon navigationProps={navigation} /> }
   }
 
-  state = {}
-
-  render = () => (
-    <View style={styles.container}>
-      <Text>This is your new component</Text>
-    </View>
-  )
+  render = () => <View />
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginHorizontal: 16
-  }
-})
+const styles = StyleSheet.create({ View_1: {} })
+const mapStateToProps = state => {
+  return {}
+}
+const mapDispatchToProps = () => {
+  return {}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Blank)
